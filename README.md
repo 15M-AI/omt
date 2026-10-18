@@ -44,14 +44,14 @@ Ensure it is on your `PATH`:
 
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
-open-mind-tui
+omt
 ```
 
 To make the PATH change persistent, add the export line to `~/.bashrc` or the
 startup file for your shell. Verify the executable with:
 
 ```bash
-open-mind-tui --version
+omt --version
 ```
 
 ## First run
@@ -63,7 +63,7 @@ cd ~/OpenMind
 ./target/release/om add /path/to/model.omf
 ```
 
-Then launch `open-mind-tui`, choose **Choose a model**, select the model, and
+Then launch `omt`, choose **Choose a model**, select the model, and
 open **Chat**. The TUI starts `om serve` on `127.0.0.1:8080` automatically when
 you enter chat. It stops that server on exit. Choose **Start / stop API server**
 to control the API without opening chat.
@@ -85,7 +85,7 @@ to control the API without opening chat.
 ## Configuration
 
 ```bash
-open-mind-tui \
+omt \
   --runtime ~/OpenMind/target/release/om \
   --source ~/OpenMind \
   --host 127.0.0.1 \
@@ -102,7 +102,7 @@ TUI use `~/.open-mind/models`. API logs are written to
 
 ```bash
 go test ./...
-go build ./cmd/open-mind-tui
+go build ./cmd/omt
 ```
 
 The only inference backend is the Open Mind CPU runtime and OMA API. This TUI

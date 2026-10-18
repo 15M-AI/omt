@@ -5,14 +5,14 @@ GO ?= go
 
 build:
 	mkdir -p dist
-	$(GO) build -trimpath -ldflags="-s -w" -o dist/open-mind-tui ./cmd/open-mind-tui
+	$(GO) build -trimpath -ldflags="-s -w" -o dist/omt ./cmd/omt
 
 install:
 	mkdir -p "$(PREFIX)/bin"
-	tmp="$(PREFIX)/bin/.open-mind-tui.tmp"; \
+	tmp="$(PREFIX)/bin/.omt.tmp"; \
 	trap 'rm -f "$$tmp"' EXIT; \
-	$(GO) build -trimpath -ldflags="-s -w" -o "$$tmp" ./cmd/open-mind-tui; \
-	mv -f "$$tmp" "$(PREFIX)/bin/open-mind-tui"
+	$(GO) build -trimpath -ldflags="-s -w" -o "$$tmp" ./cmd/omt; \
+	mv -f "$$tmp" "$(PREFIX)/bin/omt"
 
 test:
 	$(GO) test ./...

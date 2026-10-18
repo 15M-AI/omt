@@ -19,7 +19,7 @@ func main() {
 	flag.Parse()
 
 	if *version {
-		fmt.Println("open-mind-tui 0.2.0")
+		fmt.Println("omt 0.2.0")
 		return
 	}
 	if *port < 1 || *port > 65535 {
@@ -58,7 +58,7 @@ func main() {
 		Host:    *host,
 		Port:    *port,
 	}); err != nil {
-		fmt.Fprintf(os.Stderr, "open-mind-tui: %v\n", err)
+		fmt.Fprintf(os.Stderr, "omt: %v\n", err)
 		os.Exit(1)
 	}
 }
